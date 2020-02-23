@@ -28,9 +28,14 @@ derivar = function(nums){
   return (derivada)
 }
 
+f = function(x) 2*x^4-3*x^2+3*x+4
+f_prima = function(x) 8*x^3-6*x+3
+plot(f,xlim = c(-2,2), col = 1, ylim=c(0,40),ylab = "Y" )
+par(new = TRUE)           #par can be used to set or query graphical parameters 
+plot(f_prima,xlim = c(-2,2),col= "red",ylim=c(0,40),xlab = "X")
 
 nums = c(2,0,-3,3,-4)
-num_complejo= complex(real = 2, imaginary = sqrt(6))   #numero complejo
+num_complejo= complex(real = 5, imaginary = sqrt(7))   #numero complejo
 res = func_horner(num_complejo, derivar(nums))
 print(res,16)   #imprimimos el resultado con 16 cifras significativas
 
